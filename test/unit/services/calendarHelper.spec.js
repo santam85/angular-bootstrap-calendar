@@ -180,7 +180,7 @@ describe('calendarHelper', function() {
     }));
 
     it('should skip the excluded days', function() {
-      var weekdays = calendarHelper.getWeekDayNames([0,6]);
+      var weekdays = calendarHelper.getWeekDayNames([0, 6]);
       expect(weekdays).to.eql(['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']);
     });
 
