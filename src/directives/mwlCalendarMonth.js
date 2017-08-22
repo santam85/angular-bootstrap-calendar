@@ -27,9 +27,9 @@ angular
 
     $scope.$on('calendar.refreshView', function() {
 
-      vm.weekDays = calendarHelper.getWeekDayNames();
+      vm.weekDays = calendarHelper.getWeekDayNames(vm.excludedDays);
 
-      var monthView = calendarHelper.getMonthView(vm.events, vm.viewDate, vm.cellModifier);
+      var monthView = calendarHelper.getMonthView(vm.events, vm.viewDate, vm.cellModifier, vm.excludedDays);
       vm.view = monthView.days;
       vm.monthOffsets = monthView.rowOffsets;
 
@@ -170,6 +170,7 @@ angular
       scope: {
         events: '=',
         viewDate: '=',
+        excludedDays: '=',
         onEventClick: '=',
         onEventTimesChanged: '=',
         onDateRangeSelect: '=',
