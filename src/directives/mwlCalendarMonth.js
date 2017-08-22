@@ -19,7 +19,7 @@ angular
         vm.view.forEach(function(day, dayIndex) {
           if (moment(vm.viewDate).startOf('day').isSame(day.date)) {
             vm.openDayIndex = dayIndex;
-            vm.openRowIndex = Math.floor(dayIndex / 7);
+            vm.openRowIndex = Math.floor(dayIndex / vm.weekDays.length);
           }
         });
       }
@@ -68,7 +68,7 @@ angular
           vm.cellIsOpen = false;
         } else {
           vm.openDayIndex = dayIndex;
-          vm.openRowIndex = Math.floor(dayIndex / 7);
+          vm.openRowIndex = Math.floor(dayIndex / vm.weekDays.length);
           vm.cellIsOpen = true;
         }
       }
