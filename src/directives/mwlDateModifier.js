@@ -13,7 +13,7 @@ angular
         vm.date = new Date();
       } else if (angular.isDefined($attrs.increment)) {
         vm.date = moment(vm.date).add(1, vm.increment);
-        if (vm.excludedDays && vm.increment === 'day') {
+        if (vm.excludedDays && vm.increment.indexOf('day') > -1) {
           while (vm.excludedDays.indexOf(vm.date.day()) > -1) {
             vm.date.add(1, vm.increment);
           }
@@ -21,7 +21,7 @@ angular
         vm.date = vm.date.toDate();
       } else if (angular.isDefined($attrs.decrement)) {
         vm.date = moment(vm.date).subtract(1, vm.decrement);
-        if (vm.excludedDays && vm.decrement === 'day') {
+        if (vm.excludedDays && vm.decrement.indexOf('day') > -1) {
           while (vm.excludedDays.indexOf(vm.date.day()) > -1) {
             vm.date.subtract(1, vm.decrement);
           }
