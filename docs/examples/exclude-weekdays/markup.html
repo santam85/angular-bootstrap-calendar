@@ -1,5 +1,5 @@
 <div ng-controller="ExcludeWeekdays as vm">
-  <h3 ng-if="vm.calendarView == 'day'">{{vm.viewDate | date}}</h3>
+  <h2 class="text-center">{{ vm.calendarTitle }}</h2>
 
   <div class="row">
     <div class="col-md-6 text-center">
@@ -44,12 +44,13 @@
       </div>
     </div>
   </div>
-   
+
   <br>
 
   <mwl-calendar
     events="vm.events"
     view="vm.calendarView"
+    view-title="vm.calendarTitle"
     view-date="vm.viewDate"
     excluded-days="vm.excludedDays">
   </mwl-calendar>
